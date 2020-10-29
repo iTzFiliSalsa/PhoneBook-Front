@@ -1,0 +1,58 @@
+<div class="title">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 order-2 order-md-1">
+            <div class="bg-white p-4">
+                <h3>Mi Perfil</h3>
+                <div class="contacts pr-3">
+                    <form [formGroup]="form" (ngSubmit)="send()">
+                        <div class="form-group mt-3 mb-3">
+                            <label for="nameC">Nombre</label>
+                            <input formControlName="Name" type="text" id="nameC" class="form-control mt-1 pl-2" placeholder="Nombre">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="nameC">Apellido</label>
+                            <input formControlName="LastName" type="text" id="apellidoC" class="form-control mt-1 pl-2" placeholder="Apellido">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="nameC">Email</label>
+                            <input formControlName="Email" type="text" id="emailC" class="form-control mt-1 pl-2" placeholder="Email">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="passC">Contraseña</label>
+                            <input formControlName="Password" type="password" id="passC" class="form-control mt-1 pl-2" placeholder="Contraseña">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="cPassC">Confirmar Contraseña</label>
+                            <input formControlName="confirmPass" type="password" id="cPassC" class="form-control mt-1 pl-2" placeholder="Confirmar Contraseña">
+                        </div>
+                        <div class="text-right">
+                            <button [disabled]="form.invalid" class="principal">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 order-1 order-md-2">
+            <div class="p-0 px-md-4">
+                <div class="description">
+                    <div class="description__header">
+                        <img [src]="profile.url" alt="">
+                    </div>
+                    <div class="description__content">
+                        <ul class="mt-3">
+                            <li class="p-3">
+                                <p><span class="mr-3"><i class="fas fa-user"></i></span>{{ profile.name }}</p>
+                            </li>
+                            <li class="p-3">
+                                <p><span class="mr-3"><i class="fas fa-briefcase"></i></span>{{ profile.email }}</p>
+                            </li>
+                            <!-- <li class="p-3">
+                                <p><span class="mr-3"><i class="fas fa-phone-alt"></i></span>{{ values.telefono }}</p>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

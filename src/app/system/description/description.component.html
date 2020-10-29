@@ -1,0 +1,43 @@
+<div class="description">
+    <div class="description__header">
+        <img [src]="_utilService.img" alt="">
+    </div>
+    <div class="description__content">
+        <ul class="mt-3">
+            <li class="p-3">
+                <p><span class="mr-3"><i class="fas fa-user"></i></span>{{ values.nombre }}</p>
+            </li>
+            <li class="p-3">
+                <p><span class="mr-3"><i class="fas fa-briefcase"></i></span>{{ values.cargo }}</p>
+            </li>
+            <li class="p-3">
+                <p><span class="mr-3"><i class="fas fa-phone-alt"></i></span>{{ values.telefono }}</p>
+            </li>
+        </ul>
+        <div class="text-right pb-3 pr-3">
+            <button class="principal" (click)="edit()">Editar</button>
+        </div>
+    </div>
+</div>
+
+<swal #swal [swalOptions]="{title: 'Editar', showConfirmButton: false}">
+    <form *swalPortal [formGroup]="editForm" (ngSumbit)="editPost()">
+    <div class="form-group mb-2">
+        <label class="mb-2" for="url">Url Imagen <span class="ml-3" (click)="refresh()"><i class="fas fa-sync"></i></span></label>
+        <input formControlName="Url" type="text" id="url" class="form-control">
+    </div>
+    <div class="form-group mb-2">
+          <label class="mb-2" for="name">Nombre</label>
+          <input formControlName="Nombre" type="text" id="name" class="form-control">
+      </div>
+      <div class="form-group mb-2">
+        <label class="mb-2" for="cargo">Cargo</label>
+        <input formControlName="Cargo" type="text" id="cargo" class="form-control">
+    </div>
+    <div class="form-group mb-2">
+        <label class="mb-2" for="phone">Telefono</label>
+        <input formControlName="Telefono" type="text" id="phone" class="form-control">
+    </div>
+    <button class="principal mt-3" (click)="editPost()" [disabled]="editForm.invalid">Editar</button>
+    </form>
+  </swal>

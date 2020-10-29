@@ -1,0 +1,27 @@
+<div class="title">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 order-2 order-md-1">
+            <div class="bg-white p-4">
+                <h3>Mis contactos</h3>
+                <div class="contacts pr-3">
+                    <ng-container  *ngFor="let i of contact">
+                    <a (click)="goTo(i)" *ngIf="i.usuario == user.id">
+                        <div class="contacts__item">
+                            <img [src]="i.url" alt="">
+                            <div class="contacts__item__info">
+                                <p>{{i.nombre}}</p>
+                                <small>{{i.cargo}}</small>
+                            </div>
+                        </div>
+                    </a>
+                </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 order-1 order-md-2">
+            <div class="p-0 px-md-4">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

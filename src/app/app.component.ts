@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { UtilsService } from './services/utils.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'agenda';
+  
+  constructor(
+    public _utilService: UtilsService,
+    private route: Router
+  ){
+    if(localStorage.getItem("user_neoris") == null){
+      this.route.navigateByUrl('/login');
+    }
+  }
 }

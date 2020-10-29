@@ -1,0 +1,247 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.exit{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: none;
+    padding: 15px;
+    color: #FFF;
+    border: none;
+}
+
+.leeft{
+    left: -50% !important;
+}
+
+.normal{
+    left: 0 ;
+}
+
+.home{
+    height: 100vh;
+    min-height: 100vh;
+    position: relative;
+    background-color: #eaeaea;
+
+    &__sidebar{
+        position: absolute;
+        width: 20%;
+        left: 0;
+        height: 100%;
+        background: linear-gradient(135deg, #1f3b6b, #000);
+        transition: left 300ms ease !important;        
+        
+
+        .profile{
+            width: 75px;
+            width: 75px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #FFF;
+        }
+
+        .neoris{
+            width: 20%;
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+        }
+
+        ul{
+            li{
+                width: 100%;
+                margin-top: 5px;
+                a{
+                    display: block;
+                    padding: 20px 30px;
+                    background-color:#152747;
+                    color: #fff;
+                    text-decoration: none;
+                }
+
+                .active{
+                    position: relative;
+                    background-color: #eaeaea;
+                    color:  #1f3b6b;
+                    font-weight: bold;
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 15px;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        background-color: #152747;
+                    }
+                }
+            }
+
+            
+        }
+    }
+
+    &__principal{
+        top: 0;
+        left: 20%;
+        position: absolute;
+        width: 80%;
+        height: 100%;
+        transition: all 300ms ease;   
+        nav{
+            height: 75px;
+            background-color: #FFF;
+            padding: 0 20px;
+            .bars{
+                margin-right: 20px;
+                font-size: 20px;
+                color: #152747;
+                padding: 5px 10px;
+                background: none;
+                border: none;
+                transition: all 300ms ease;
+                &:hover{
+                    background: rgb(241, 241, 241);
+                }
+            }
+
+            .add{
+                color: #152747;
+                padding: 5px 10px;
+                background: #eaeaea;
+                border: none;
+                transition: all 300ms ease;
+                &:hover{
+                    background: rgb(241, 241, 241);
+                }
+            }
+            h3{
+                letter-spacing: 2px;
+                color: #152747;
+            }
+        }
+
+        &__content{
+            background: #FFF;
+            padding: 20px;
+        }
+    }
+}
+
+.hide{
+    left: -20%;
+}
+
+.full{
+    left: 0;
+    width: 100%;
+}
+
+
+
+
+
+// @media (max-width: 1150px){
+//     .home{
+//         &__sidebar{
+//             flex: 30%;
+//         }
+//         &__principal{
+//             flex: 70%;
+//         }
+//     }
+// }
+
+// @media (max-width: 720px){
+//     .home{
+//         &__sidebar{
+//             flex: 40%;
+//         }
+//         &__principal{
+//             flex: 60%;
+//         }
+//     }
+// }
+
+@media (min-width: 700px){
+    .home{
+        &__sidebar__mobile{
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 700px){
+    .home{
+        &__sidebar{
+            display: none;
+        }
+
+        &__sidebar__mobile{
+            z-index: 999;
+            position: fixed;
+            width: 50%;
+            left: 0;
+            
+            height: 100%;
+            background: linear-gradient(135deg, #1f3b6b, #000);
+            transition: left 300ms ease;        
+            
+    
+            .profile{
+                width: 75px;
+                width: 75px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 2px solid #FFF;
+            }
+    
+            .neoris{
+                width: 20%;
+                position: absolute;
+                bottom: 25px;
+                left: 25px;
+            }
+    
+            ul{
+                li{
+                    width: 100%;
+                    margin-top: 5px;
+                    a{
+                        display: block;
+                        padding: 20px 30px;
+                        background-color:#152747;
+                        color: #fff;
+                        text-decoration: none;
+                    }
+    
+                    .active{
+                        position: relative;
+                        background-color: #eaeaea;
+                        color:  #1f3b6b;
+                        font-weight: bold;
+    
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            width: 15px;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            background-color: #152747;
+                        }
+                    }
+                }  
+            }
+        }
+
+        &__principal{
+            left: 0;
+            width: 100%;
+        }
+    }
+}
